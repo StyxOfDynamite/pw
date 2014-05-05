@@ -1,1 +1,25 @@
-My Github Page
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<title>Form sample - 1</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script src="js/passwordField.min.js"></script>
+	</head>
+	<body>
+		<div id='container'>
+			<form id="new-password">
+				<label for="password">Choose a new password</label>
+				<input placeholder="Enter your password" type="password" class="password-field" id="password" name="password" />
+			</form>
+		</div>
+		<script>
+		$("#password").addPasswordConstraints();
+		</script>
+	</div>
+</body>
+</html>
