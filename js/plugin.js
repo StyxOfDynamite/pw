@@ -1,4 +1,4 @@
-//plugin version 0.1
+//plugin version 0.2
 (function($) {
     $.fn.addPasswordConstraints = function() {
         //passwordInput
