@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    'js/passwordField.min.js': ['js/passwordField.js']
+                    'js/passwordField.min.js': ['js/plugin.js']
                 }
             },
         },
