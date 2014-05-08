@@ -1,30 +1,22 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
 		<title>Form sample - 1</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="author" content="Luke Storer" />
-		<meta name="description" content="demo for passsword feedback" />
-		<meta name="keywords"  content="web,developer,sux, password, jQuery" />
-		<meta name="Resource-type" content="Document" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-		<link rel="stylesheet" href="css/plugin.css" />
-		<link rel="stylesheet" type="text/css" href="css/styles.css" />
-		
-		<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/plugin.css">
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="js/passwordField.min.js"></script>
 	</head>
 	<body>
-		<div class='container'>
+		<div id='container'>
 			<form id="new-password">
 				<label for="password">Choose a new password</label>
-				<input placeholder="Enter your password" type="password" class="password-field" id="password" name="password" />
+				<input placeholder="Enter your password" type="password" id="password" name="password" />
 			</form>
 		</div>
-		<script>
-		$("#password").addPasswordConstraints();
-		</script>
 	</body>
 </html>
