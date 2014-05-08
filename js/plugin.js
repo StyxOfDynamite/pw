@@ -4,13 +4,16 @@
         //passwordInput
         var passwordInput = $(this);
         //constraints
-        var eight = '<li id="eight-plus">8 characters</li>';
-        var upper = '<li id="uppercase">Uppercase character</li>';
-        var lower = '<li id="lowercase">Lowercase character</li>';
-        var number = '<li id="numbers">Number character</li>';
-        var special = '<li id="specials">Special character</li>';
+        var eight = '<li id="eight-plus" class="password-constraint">8 characters</li>';
+        var upper = '<li id="uppercase" class="password-constraint">Uppercase character</li>';
+        var lower = '<li id="lowercase" class="password-constraint">Lowercase character</li>';
+        var number = '<li id="numbers" class="password-constraint">Number character</li>';
+        var special = '<li id="specials" class="password-constraint">Special character</li>';
         var passwordContstraints = '<ul>' + eight + upper + lower + number + special + '</ul>';
+
         $(passwordContstraints).insertAfter(passwordInput);
+
+
         //element selectors
         var eightPlus = $('#eight-plus');
         var uppercase = $('#uppercase');
@@ -59,13 +62,16 @@
                 containsLowercase.test(value) &&
                 containsNumber.test(value) &&
                 containsSpecial.test(value);
-
             if (passwordIsValid) {
-                passwordInput.addClass('complete');
+                passwordInput.addClass('complete-password');
             } else {
-                passwordInput.removeClass('complete');
+                passwordInput.removeClass('complete-password');
             }
         });
         return this;
     };
+
+    $(document).ready(function() {
+        $('input[type="password"]').addPasswordConstraints();
+    });
 }(jQuery));
