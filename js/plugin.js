@@ -4,12 +4,12 @@
         //passwordInput
         var passwordInput = $(this);
         //constraints
-        var eight = '<li id="eight-plus" class="password-constraint">8 characters</li>';
-        var upper = '<li id="uppercase" class="password-constraint">Uppercase character</li>';
-        var lower = '<li id="lowercase" class="password-constraint">Lowercase character</li>';
-        var number = '<li id="numbers" class="password-constraint">Number character</li>';
-        var special = '<li id="specials" class="password-constraint">Special character</li>';
-        var passwordContstraints = '<ul>' + eight + upper + lower + number + special + '</ul>';
+        var eight = '<li id="eight-plus" class="password-constraint pc-8"></li>';
+        var upper = '<li id="uppercase" class="password-constraint pc-u"></li>';
+        var lower = '<li id="lowercase" class="password-constraint pc-l"></li>';
+        var number = '<li id="numbers" class="password-constraint pc-n"></li>';
+        var special = '<li id="specials" class="password-constraint pc-s"></li>';
+        var passwordContstraints = '<ul id="pc-contraints">' + eight + upper + lower + number + special + '</ul>';
 
         $(passwordContstraints).insertAfter(passwordInput);
 
@@ -29,33 +29,33 @@
             var value = passwordInput.val();
             // More than 8 characters
             if (value.length >= 8) {
-                eightPlus.addClass('complete');
+                eightPlus.addClass('pc-8-complete');
             } else {
-                eightPlus.removeClass('complete');
+                eightPlus.removeClass('pc-8-complete');
             }
             // Contains uppercase
             if (containsUppercase.test(value)) {
-                uppercase.addClass('complete');
+                uppercase.addClass('pc-u-complete');
             } else {
-                uppercase.removeClass('complete');
+                uppercase.removeClass('pc-u-complete');
             }
             // Contains lowercase
             if (containsLowercase.test(value)) {
-                lowercase.addClass('complete');
+                lowercase.addClass('pc-l-complete');
             } else {
-                lowercase.removeClass('complete');
+                lowercase.removeClass('pc-l-complete');
             }
             // Contains numbers
             if (containsNumber.test(value)) {
-                numbers.addClass('complete');
+                numbers.addClass('pc-n-complete');
             } else {
-                numbers.removeClass('complete');
+                numbers.removeClass('pc-n-complete');
             }
             // Contains specials
             if (containsSpecial.test(value)) {
-                specials.addClass('complete');
+                specials.addClass('pc-s-complete');
             } else {
-                specials.removeClass('complete');
+                specials.removeClass('pc-s-complete');
             }
             var passwordIsValid = (value.length >= 8) &&
                 containsUppercase.test(value) &&
