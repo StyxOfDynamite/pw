@@ -20,6 +20,15 @@ module.exports = function(grunt) {
                 }
             },
         },
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'css/',
+                src: ['*.css', '!*.min.css'],
+                dest: 'css/',
+                ext: '.min.css'
+            }
+        },
         watch: {
             css: {
                 files: '**/*.scss',
@@ -30,5 +39,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.registerTask('default', ['watch']);
 }
